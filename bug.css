@@ -1,0 +1,14 @@
+The following CSS code snippet demonstrates an issue with unexpected behavior in the specificity of CSS rules:
+
+```css
+div p {
+  color: blue;
+}
+p {
+  color: red;
+}
+```
+
+The expectation is that the `p` element should have a red color because of the more specific selector. However, the browser might apply the `blue` color because of the order of the rules. This behavior is inconsistent across different browsers.
+
+This showcases a subtle yet important aspect of CSS specificity that often leads to unexpected results.  The specificity of `div p` and `p` are equal in this case, and the order of rules matter.  Therefore, the rule defined later, `color: red;`,  may unexpectedly not be applied.
