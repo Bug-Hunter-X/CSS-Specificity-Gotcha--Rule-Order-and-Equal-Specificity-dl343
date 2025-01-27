@@ -1,0 +1,27 @@
+The solution involves understanding and managing CSS specificity.  Here's how you can fix the unexpected behavior:
+
+To ensure the `p` element is colored red, you need to make the selector more specific or more importantly understand that specificity is equal and the later declaration will take precedence if the order is adjusted.
+
+```css
+div p {
+  color: blue;
+}
+p {
+  color: red !important;
+}
+```
+
+Adding `!important` forces the rule to have the highest precedence, guaranteeing the red color will be applied. 
+
+However, it's generally best practice to avoid `!important` and instead make the selector more specific, for example, adding a class to the paragraph element to resolve the issue without relying on the `!important` flag:
+
+```css
+.red-paragraph {
+    color: red;
+}
+```
+
+```html
+<p class="red-paragraph">This paragraph should be red.</p>
+```
+This approach ensures a clearer and more maintainable CSS structure.
